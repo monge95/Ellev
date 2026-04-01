@@ -3,39 +3,75 @@
 import SwiftUI
 
 
+
 struct WelcomePage: View {
+    @State private var tocaTela: Bool = false
+    
     var body: some View {
         
-        VStack{
+        NavigationStack{
+        ZStack{
+            Color("FundodeTelasColor")
+                .edgesIgnoringSafeArea(.all)
             VStack{
-                Image("Prancheta 1 copy 2")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: 500 )
-                    .padding(.top, 162)
+                
+                VStack{
+                    
+                    Image("logoPrincipal")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 227, height: 133)
+                    
+                    
+                }
+                
+                .padding(.top, 135)
+                
+                Text("Bem vindo Ellev")
+                    .font(.custom("helveticaNeue", size: 24))
+                
+                    .padding(.top, 94)
+                    .foregroundStyle(Color("TexColor"))
+                
+                Text("No Ellev você faz sua viagem de forma mais segura, prática e confortável")
+                    .font(.custom("helveticaNeue", size: 15))
+                    .foregroundColor(Color("TexColor"))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, 54)
+                    .padding(.top, 20)
+                
+                Spacer()
+                
+                
+                
+                    NavigationLink{
+                        teste()
+                    }label: {
+                        Text("Viaje com a gente")
+                            .font(Font.custom("helveticaNeue-regular", size: 24))
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 10)
+                            .background(Color("ButtonColor"))
+                            .foregroundColor(Color("FundodeTelasColor"))
+                            .cornerRadius(50)
+                        
+                    }
+                    .padding(.top, 270)
+                    .padding(.horizontal, 54)
+                    .padding(.bottom, 54)
+                }
             }
-            
-            Text("Bem vindo Ellev")
-                .font(.custom("helveticaNeue-Bold", size: 24))
-                .border(.black, width: 1.5)
-                .padding(.top, 108)
-	
-            Text("Seja bem-vindo(a) ao Ellev, aqui você faz sua viagem de forma mais segura, prática e confortável")
-                .font(.custom("helveticaNeue", size: 15))
-                .frame(maxWidth: 297, alignment: .center)
-                .padding(.top, 20)
-                .border(.black, width: 1.5)
-            Spacer()
         }
-        .padding(.horizontal, 54)
-        .border(Color.black, width: 1.5)
-        
-        
-        
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
+    
 }
 
 
+
 #Preview {
+    
     WelcomePage()
 }
