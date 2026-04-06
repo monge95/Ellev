@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct ellevApp: App {
+struct EllevApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

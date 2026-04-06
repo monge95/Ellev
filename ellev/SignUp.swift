@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct signUp: View {
+struct SignUp: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            Text("Hello, World!")
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
-
 #Preview {
-    firstLogin()
+    SignUp()
 }
