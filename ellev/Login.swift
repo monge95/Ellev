@@ -74,8 +74,7 @@ struct Login: View {
                     } label:{
                         Text("Entrar")
                             .font(Font.custom("helveticaNeue-regular", size: 24))
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 10)
+                            .frame(maxWidth: .infinity, minHeight: 44)
                             .background(Color("ButtonColor"))
                             .foregroundColor(Color("FundodeTelasColor"))
                             .cornerRadius(50)
@@ -100,6 +99,8 @@ struct Login: View {
                         .foregroundColor(Color("TexColor"))
                     
                     
+                    
+                    // boton apple
                     NavigationLink{
                         Home()
                     } label:{
@@ -110,15 +111,14 @@ struct Login: View {
                             
                             Text("Continue com o Apple")
                                 .font(Font.custom("helveticaNeue-regular", size: 24))
-                                .frame(maxWidth: .infinity)
+                                .frame(maxWidth: .infinity, minHeight: 44)
                                 .background(Color("FundodeTelasColor"))
-                                .padding(.vertical, 10)
                                 .foregroundColor(Color(.tex))
                                 .cornerRadius(50)
                         }
                         .padding(.horizontal, 10)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 50)
                                 .stroke(Color(.tex), lineWidth: 2)
                         )
 

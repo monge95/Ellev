@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
+
 struct EllevApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomePage()
         }
     }
 }

@@ -49,9 +49,8 @@ struct WelcomePage: View {
                         Login()
                     }label: {
                         Text("Viaje com a gente")
-                            .font(Font.custom("helveticaNeue-regular", size: 24))
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 10)
+                            .font(Font.custom("helveticaNeue-regular", size: 20))
+                            .frame(maxWidth: .infinity, minHeight: 44)
                             .background(Color("ButtonColor"))
                             .foregroundColor(Color("FundodeTelasColor"))
                             .cornerRadius(50)
@@ -61,7 +60,7 @@ struct WelcomePage: View {
                     .padding(.horizontal, 54)
                     .padding(.bottom, 54)
                 }
-            
+                
             
             }
         }
