@@ -7,7 +7,7 @@ struct InputDateTimeView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(inputType == "date" ? "Data de partida" : "Hora de chegada")
-                .font(.system(size: 14))
+                .font(.custom("Helvetica-Regular", size: 14))
                 .foregroundColor(Color.tex)
             
             ZStack {

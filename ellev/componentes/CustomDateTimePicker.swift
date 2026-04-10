@@ -23,16 +23,16 @@ struct CustomDateTimePicker: View {
                 if inputType == "date" {
                     Text(dateFormatter.string(from: selectedDate))
                         .foregroundStyle(.tex)
-                        .font(.system(size: 12))
+                        .font(.custom("Helvetica-Regular", size: 12))
                 } else {
                     Text(selectedHourAndMinute)
                         .foregroundStyle(.tex)
-                        .font(.system(size: 12))
+                        .font(.custom("Helvetica-Regular", size: 12))
                 }
             } else {
                 Text(inputType == "date" ? "Ex: 25/07/2008" : "Ex: 08:15")
                     .foregroundStyle(.inputTexButton)
-                    .font(.system(size: 12))
+                    .font(.custom("Helvetica-Regular", size: 12))
             }
             
             Spacer()
