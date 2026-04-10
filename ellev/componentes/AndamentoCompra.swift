@@ -102,5 +102,5 @@ var tela:  Int
 }
 
 #Preview {
-    AndamentoCompra(QuantidadeTelas: 3, tela: 3)
+    AndamentoCompra(QuantidadeTelas: 3, tela: 2)
 }
