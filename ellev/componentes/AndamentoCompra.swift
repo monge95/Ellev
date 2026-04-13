@@ -84,7 +84,7 @@ var tela:  Int
                     }
                     
                 }
-                .padding(.horizontal, 54)
+              
                 
          
                 HStack{
@@ -94,7 +94,7 @@ var tela:  Int
                     Spacer()
                     Text("bem vindo")
                 }
-                .padding(.horizontal, 54)
+               
             }
         }
         
