@@ -6,15 +6,11 @@
 //
 
 import SwiftUI
-import MapKit
 
 struct Home: View {
     @State public var Acompanhates: Bool = false
     @State private var departureInput: String = ""
     @State private var arrivalInput: String = ""
-    
-    let cameraPosition: MapCameraPosition = .userLocation(fallback: .automatic)
-    let locationManager = CLLocationManager()
     
     var body: some View {
         NavigationStack {
@@ -92,21 +88,7 @@ struct Home: View {
                                     .fill(.inputButton))
                         }
                         
-                        Map(initialPosition: cameraPosition) {
-                            
-                        }
-                        .frame(maxWidth: .infinity, minHeight: 300)
-                        .cornerRadius(10)
-                        .tint(.button)
-                        .onAppear {
-                            locationManager.requestWhenInUseAuthorization()
-                        }
-                        .mapControls {
-                            MapUserLocationButton()
-                            MapCompass()
-                            MapPitchToggle()
-                            MapScaleView()
-                        }
+                        CustomMap()
                         
                         Spacer(minLength: 40)
                     }
