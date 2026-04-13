@@ -85,16 +85,23 @@ var tela:  Int
                     
                 }
               
-                
-         
-                HStack{
-                    Text("ola ")
-                    Spacer(minLength: 86)
-                    Text("mundo")
-                    Spacer()
-                    Text("bem vindo")
+                if QuantidadeTelas == 3
+                {
+                    HStack{
+                        Text("Pilotos ")
+                        Spacer(minLength: 86)
+                        Text("Passageiros")
+                        Spacer()
+                        Text("pagamento")
+                    }
+                }else{
+                    HStack{
+                        Text("Pilotos ")
+                        Spacer()
+                        Text("pagamento")
+                    }
                 }
-               
+         
             }
         }
         
@@ -102,5 +109,5 @@ var tela:  Int
 }
 
 #Preview {
-    AndamentoCompra(QuantidadeTelas: 3, tela: 2)
+    AndamentoCompra(QuantidadeTelas: 2, tela: 2)
 }
