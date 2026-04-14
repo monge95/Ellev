@@ -13,6 +13,8 @@ struct AgendarPilotos: View {
     
     @State private var showPilots = false
     
+    @State private var viewModel = SchedulingViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -59,7 +61,7 @@ struct AgendarPilotos: View {
                             
                             if showPilots {
                                 ScrollView {
-                                    PilotsOverlay()
+                                    PilotsOverlay(viewModel: viewModel)
                                 }
                                 .frame(maxHeight: 350)
                             }
@@ -71,7 +73,7 @@ struct AgendarPilotos: View {
                             .font(.custom("Helvetica-Bold", size: 16))
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        CardPiloto(piloto: .calvin)
+                        CardPiloto(pilot: viewModel.pilotSelected)
                         
                         Spacer()
                         
@@ -89,6 +91,7 @@ struct AgendarPilotos: View {
                     }
                     .padding(.horizontal, 54)
                     .padding(.vertical, 50)
+                    .environment(viewModel)
                 }
                 
             }

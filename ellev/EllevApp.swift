@@ -10,9 +10,13 @@ import SwiftUI
 @main
 
 struct EllevApp: App {
+    
+    @State private var schedulingViewModel = SchedulingViewModel()
+    
     var body: some Scene {
         WindowGroup {
             WelcomePage()
         }
+        .environment(schedulingViewModel)
     }
 }
