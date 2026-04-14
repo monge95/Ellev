@@ -20,6 +20,9 @@ class SchedulingViewModel {
         Pilot(name: "Gabriela Torres P.", flyHours: 198, helicopterModel: "Bell 429", specialtyPilot: "Voos noturnos.", pilotImageName: "FotoGabriela")
     ]
     
+    
+    var acompanhantes: [Acompanhantes] = []
+    
     var filteredPilots: [Pilot] {
         if searchText.isEmpty {
             return pilots

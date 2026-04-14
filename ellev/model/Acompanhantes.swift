@@ -2,7 +2,7 @@
 
 import SwiftUI
 
-class Acompanhante {
+class Acompanhantes {
     var nome: String
     var cpf: String
     var idade: Int

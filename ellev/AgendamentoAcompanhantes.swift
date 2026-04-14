@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+
 struct AgendamentoAcompanhantes: View {
+    @State private var viewModel = SchedulingViewModel()
+    
     var QuantidadeTelas: Int
     var tela:  Int = 2
     
@@ -18,6 +21,8 @@ struct AgendamentoAcompanhantes: View {
                     .ignoresSafeArea(edges: .all)
                 VStack{
                     AndamentoCompra(QuantidadeTelas: QuantidadeTelas, tela: tela)
+                    
+                    
                     
                 }.padding(54)
             }
