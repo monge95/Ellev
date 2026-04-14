@@ -11,6 +11,8 @@ struct PilotsOverlay: View {
     
     var viewModel: SchedulingViewModel
     
+    @Binding var showPilots: Bool
+    
     var body: some View {
         
         @Bindable var bindableViewModel = viewModel
@@ -35,6 +37,11 @@ struct PilotsOverlay: View {
                 VStack(spacing: 0) {
                     ForEach(viewModel.filteredPilots) { pilot in
                         PilotRowList(pilot: pilot)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                viewModel.pilotSelected = pilot
+                                showPilots = false
+                            }
                         
                         Divider()
                             .background(.inputButton)
@@ -49,6 +56,6 @@ struct PilotsOverlay: View {
     }
 }
 
-#Preview {
-    PilotsOverlay(viewModel: SchedulingViewModel())
-}
+//#Preview {
+//    PilotsOverlay(viewModel: SchedulingViewModel())
+//}

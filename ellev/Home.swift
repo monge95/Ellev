@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Home: View {
-    @State public var Acompanhates: Bool = false
+    @State public var acompanhatesToggle: Bool = false
     @State private var departureInput: String = ""
     @State private var arrivalInput: String = ""
     
@@ -48,7 +48,7 @@ struct Home: View {
                             InputDateTimeView(inputType: "time")
                         }
                         
-                        Toggle("Irá acompanhado de outro passageiro?", isOn: $Acompanhates)
+                        Toggle("Irá acompanhado de outro passageiro?", isOn: $acompanhatesToggle)
                             .scaleEffect(0.97)
                             .font(Font.custom("Helvetica", size: 14))
                             .tint(.button)
@@ -89,6 +89,22 @@ struct Home: View {
                         }
                         
                         CustomMap()
+                        
+                        NavigationLink {
+                            if acompanhatesToggle {
+                                AgendarPilotos(QuantidadeTelas: 3)
+                            } else {
+                                AgendarPilotos(QuantidadeTelas: 2)
+                            }
+                        }label: {
+                            Text("Viaje com a gente")
+                                .font(Font.custom("helveticaNeue-regular", size: 20))
+                                .frame(maxWidth: .infinity, minHeight: 44)
+                                .background(Color("ButtonColor"))
+                                .foregroundColor(Color("FundodeTelasColor"))
+                                .cornerRadius(50)
+                        }
+                        .padding(.top, 20)
                         
                         Spacer(minLength: 40)
                     }
