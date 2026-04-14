@@ -115,7 +115,7 @@ struct CardPiloto: View {
         .frame(maxWidth: .infinity, maxHeight: 203, alignment: .leading)
         .padding(20)
         .background(Color.card)
-        .cornerRadius(20)
+        .cornerRadius(10)
         
     }
 }

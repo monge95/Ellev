@@ -12,6 +12,7 @@ import Foundation
 class SchedulingViewModel {
     var searchText: String = ""
     var pilotSelected: Pilot = Pilot(name: "Calvin B.", flyHours: 200, helicopterModel: "Airbus H145", specialtyPilot: "Voos noturnos e agilidade urbana.", pilotImageName: "fotoCalvin")
+    var acompanhantesSelecionados: [Acompanhantes] = []
     
     var pilots: [Pilot] = [
         Pilot(name: "Calvin B.", flyHours: 200, helicopterModel: "Airbus H145", specialtyPilot: "Voos noturnos e agilidade urbana.", pilotImageName: "fotoCalvin"),
@@ -21,13 +22,23 @@ class SchedulingViewModel {
     ]
     
     
-    var acompanhantes: [Acompanhantes] = []
+    var acompanhantes: [Acompanhantes] = [
+        Acompanhantes(nome: "Keyla Abelaver", cpf: "374.985.234-09", idade: 40, peso: 65.6)
+    ]
     
     var filteredPilots: [Pilot] {
         if searchText.isEmpty {
             return pilots
         } else {
             return pilots.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        }
+    }
+    
+    var filteredAcompanhantes: [Acompanhantes] {
+        if searchText.isEmpty {
+            return acompanhantes
+        } else {
+            return acompanhantes.filter { $0.nome.localizedCaseInsensitiveContains(searchText)}
         }
     }
 }

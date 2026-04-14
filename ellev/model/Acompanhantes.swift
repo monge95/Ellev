@@ -2,7 +2,9 @@
 
 import SwiftUI
 
-class Acompanhantes {
+@Observable
+class Acompanhantes: Identifiable {
+    let id = UUID()
     var nome: String
     var cpf: String
     var idade: Int
@@ -14,8 +16,4 @@ class Acompanhantes {
         self.idade = idade
         self.peso = peso
     }
-    
-    
-    
-    
 }
