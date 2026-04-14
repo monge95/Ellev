@@ -101,7 +101,7 @@ struct Comfirmacao: View {
                                 Text("Valor:")
                                     .font(.custom("jost-bold", size: 15))
                                 
-                                Text("R$ 1.000,00")
+                                Text("R$ 15.000,00")
                                     .font(.custom("helvetica-bold", size: 15))
                             }
                             .padding(.top, 10)
@@ -116,7 +116,9 @@ struct Comfirmacao: View {
                         .cornerRadius(10)
                     Spacer()
                     
-                    Button{}label: {
+                    Button{
+                        
+                    }label: {
                         HStack{
                             Image(systemName: "creditcard.fill")
                                 .foregroundStyle(Color.button)
