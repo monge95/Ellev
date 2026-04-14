@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PilotRowList: View {
     
-    @Binding var pilot: Pilot
+    var pilot: Pilot
     
     var body: some View {
         HStack(spacing: 16) {
