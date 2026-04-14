@@ -60,7 +60,7 @@ struct AgendarPilotos: View {
                         .overlay(alignment: .top) {
                             if showPilots {
                                 ScrollView {
-                                    PilotsOverlay(viewModel: viewModel, showPilots: $showPilots)
+                                    ListOverlay(viewModel: viewModel, show: $showPilots, infoList: "pilot")
                                 }
                                 .frame(height: 400)
                                 .offset(y: 39)
