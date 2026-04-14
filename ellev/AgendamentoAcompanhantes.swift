@@ -79,9 +79,38 @@ struct AgendamentoAcompanhantes: View {
                         }
                     }
                     
+                    HStack {
+                        NavigationLink {
+                            AddAcompanhantes(viewModel: viewModel)
+                        }label: {
+                            Image(systemName: "plus.circle.fill")
+                                .font(.system(size: 20))
+                                .foregroundStyle(.button)
+                            
+                            Text("Cadastrar Passageiro(a)")
+                                .font(.custom("Jost", size: 16))
+                                .foregroundStyle(.button)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Spacer()
+                    
+                    NavigationLink{
+                        Comfirmacao(QuantidadeTelas: 3, tela: 3)
+                    } label:{
+                        Text("Ir para Pagamento")
+                            .font(Font.custom("Jost", size: 20))
+                            .frame(maxWidth: .infinity, minHeight: 44)
+                            .background(Color("ButtonColor"))
+                            .foregroundColor(Color("FundodeTelasColor"))
+                            .cornerRadius(50)
+                    }
+                    
                 }
                 .padding(.horizontal, 54)
                 .padding(.vertical, 50)
+                .environment(viewModel)
             }
         }
         

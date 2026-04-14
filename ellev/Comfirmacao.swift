@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Comfirmacao: View {
-@State var QuantidadeTelas: Int
-@State var tela: Int = 3
+    @State var QuantidadeTelas: Int
+    @State var tela: Int
      
     var pix: Bool = false
     var cartao: Bool = false
@@ -140,5 +140,5 @@ struct Comfirmacao: View {
 }
 
 #Preview {
-    Comfirmacao(QuantidadeTelas: 3)
+    Comfirmacao(QuantidadeTelas: 3, tela: 2)
 }
