@@ -79,15 +79,29 @@ struct AgendarPilotos: View {
                     
                     Spacer(minLength: 55)
                     
-                    NavigationLink{
-                        
-                    }label: {
-                        Text("Escolha os passageiros")
-                            .font(Font.custom("Jost-regular", size: 20))
-                            .frame(maxWidth: .infinity, minHeight: 44)
-                            .background(Color("ButtonColor"))
-                            .foregroundColor(Color("FundodeTelasColor"))
-                            .cornerRadius(50)
+                    if QuantidadeTelas == 3 {
+                        NavigationLink{
+                            AgendamentoAcompanhantes()
+                        }label: {
+                            Text("Escolha os passageiros")
+                                .font(Font.custom("Jost-regular", size: 20))
+                                .frame(maxWidth: .infinity, minHeight: 44)
+                                .background(Color("ButtonColor"))
+                                .foregroundColor(Color("FundodeTelasColor"))
+                                .cornerRadius(50)
+                            
+                        }
+                    } else {
+                        NavigationLink{
+                            Comfirmacao(QuantidadeTelas: 2, tela: 2)
+                        }label: {
+                            Text("Ir para Pagamento")
+                                .font(Font.custom("Jost-regular", size: 20))
+                                .frame(maxWidth: .infinity, minHeight: 44)
+                                .background(Color("ButtonColor"))
+                                .foregroundColor(Color("FundodeTelasColor"))
+                                .cornerRadius(50)
+                        }
                         
                     }
                     
@@ -97,7 +111,6 @@ struct AgendarPilotos: View {
                 .environment(viewModel)
                 
             }
-            
         }
         
         

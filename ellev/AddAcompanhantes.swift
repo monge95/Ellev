@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddAcompanhantes: View {
-    @State private var viewModel = SchedulingViewModel()
+    var viewModel = SchedulingViewModel()
     @Environment(\.dismiss) private var dismiss
     
     @State private var Nome: String = ""
@@ -20,6 +20,10 @@ struct AddAcompanhantes: View {
         
         NavigationStack {
             ZStack{
+                
+                Color(.fundodeTelas)
+                    .ignoresSafeArea()
+                
                 VStack{
                     Text("Cadastre Novos(as)")
                         .font(.custom("jost", size:25))
@@ -93,6 +97,7 @@ struct AddAcompanhantes: View {
                             .font(.custom("helvetica", size: 16))
                         
                     }
+                    
                     Spacer()
                     
                     Button{
@@ -116,6 +121,8 @@ struct AddAcompanhantes: View {
                         .cornerRadius(50)
                        
                     }
+                    
+                    Spacer()
                     
                 }.padding(54)
                 
