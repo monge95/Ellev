@@ -54,7 +54,6 @@ struct WelcomePage: View {
                             .background(Color("ButtonColor"))
                             .foregroundColor(Color("FundodeTelasColor"))
                             .cornerRadius(50)
-                        
                     }
                     .padding(.top, 270)
                     .padding(.horizontal, 54)
