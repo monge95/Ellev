@@ -38,7 +38,15 @@ var tela:  Int
                     ForEach(1...QuantidadeTelas, id: \.self){index in
                         
                         if tela >= index {
-                            Andamento(numero: index, corFundo: .button, corTexto: .fundodeTelas)
+                            
+                            if index == QuantidadeTelas  {
+                                
+                                Andamento(numero: index, corFundo: .button, corTexto: .fundodeTelas)
+                                    .padding(.trailing, 20)
+                            }else{
+                                Andamento(numero: index, corFundo: .button, corTexto: .fundodeTelas)
+                                
+                            }
                             
                             if tela == index && QuantidadeTelas != index {
                                 ZStack(alignment: .leading) {
@@ -48,6 +56,7 @@ var tela:  Int
                                         Rectangle()
                                             .frame(height: 1)
                                             .foregroundColor(.fundodeTelas)
+                                        
                                     }
                                     
                                     Image("beijaflorAzul")
@@ -65,17 +74,18 @@ var tela:  Int
                             }
                             
                             
+                            
                         }else{
-                            Andamento(numero: index, corFundo: .inputButton, corTexto: .button)
+                                Andamento(numero: index, corFundo: .inputButton, corTexto: .button)
+                            
                             if index != QuantidadeTelas {
                                 
                                 Rectangle()
                                     .frame(height: 1)
-                                    .foregroundColor(.inputButton)
+                                    .foregroundColor(.red)
                             }else{
-                              Spacer(minLength: 30)
+                                Spacer(minLength: 20)
                             }
-                            
                         }
                         
                         
@@ -89,25 +99,36 @@ var tela:  Int
                 {
                     HStack{
                         Text("Pilotos ")
-                        Spacer(minLength: 86)
+                            .font(Font.custom("HelveticaNeue-bold", size: 12))
+                            .foregroundStyle(Color.tex)
+                        Spacer()
                         Text("Passageiros")
+                            .font(Font.custom("HelveticaNeue-bold", size: 12))
+                            .foregroundStyle(Color.tex)
                         Spacer()
                         Text("pagamento")
+                            .font(Font.custom("HelveticaNeue-bold", size: 12))
+                            .foregroundStyle(Color.tex)
                     }
                 }else{
                     HStack{
                         Text("Pilotos ")
+                            .font(Font.custom("HelveticaNeue-bold", size: 12))
+                            .foregroundStyle(Color.tex)
                         Spacer()
                         Text("pagamento")
+                            .font(Font.custom("HelveticaNeue-bold", size: 12))
+                            .foregroundStyle(Color.tex)
                     }
                 }
          
             }
+            
         }
         
     }
 }
 
 #Preview {
-    AndamentoCompra(QuantidadeTelas: 2, tela: 2)
+    AndamentoCompra(QuantidadeTelas: 3, tela: 2)
 }
