@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddAcompanhantes: View {
-    var viewModel = SchedulingViewModel()
+    @Environment(SchedulingViewModel.self) var viewModel
     @Environment(\.dismiss) private var dismiss
     
     @State private var Nome: String = ""
@@ -135,5 +135,8 @@ struct AddAcompanhantes: View {
 }
 
 #Preview {
+    var viewModel = SchedulingViewModel()
+    
     AddAcompanhantes()
+        .environment(viewModel)
 }

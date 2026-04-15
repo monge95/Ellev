@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct AgendamentoAcompanhantes: View {
-    @State private var viewModel = SchedulingViewModel()
+    @Environment(SchedulingViewModel.self) var viewModel
     
     @State private var showAcompanhantes = false
     
@@ -63,7 +63,7 @@ struct AgendamentoAcompanhantes: View {
                         .overlay(alignment: .top) {
                             if showAcompanhantes {
                                 ScrollView {
-                                    ListOverlay(viewModel: viewModel, show: $showAcompanhantes, infoList: "passenger")
+                                    ListOverlay(show: $showAcompanhantes, infoList: "passenger")
                                 }
                                 .frame(height: 400)
                                 .offset(y: 39)
@@ -75,13 +75,13 @@ struct AgendamentoAcompanhantes: View {
                     
                     VStack(spacing: 10) {
                         ForEach(viewModel.acompanhantesSelecionados) { acompanhante in
-                            cardAcompanhante(acompanhante: acompanhante, viewModel: viewModel)
+                            cardAcompanhante(acompanhante: acompanhante)
                         }
                     }
                     
                     HStack {
                         NavigationLink {
-                            AddAcompanhantes(viewModel: viewModel)
+                            AddAcompanhantes()
                         }label: {
                             Image(systemName: "plus.circle.fill")
                                 .font(.system(size: 20))
@@ -119,5 +119,8 @@ struct AgendamentoAcompanhantes: View {
 }
 
 #Preview {
+    var viewModel = SchedulingViewModel()
+    
     AgendamentoAcompanhantes()
+        .environment(viewModel)
 }
