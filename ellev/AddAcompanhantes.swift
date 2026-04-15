@@ -44,11 +44,11 @@ struct AddAcompanhantes: View {
                             .font(.custom("helvetica", size: 16))
                             .foregroundStyle(Color.tex)
                         
-                        TextField("", text: $Nome, prompt: Text("Ex: Senha123!").foregroundStyle(.inputTexButton))
+                        TextField("", text: $Nome, prompt: Text("Ex: pedro monge silveira").foregroundStyle(.inputTexButton))
                             .padding(12)
                             .background(.inputButton)
                             .cornerRadius(8)
-                            .font(.custom("helvetica", size: 16))
+                            .font(.custom("helvetica", size: 12))
                         
                     }
                     
@@ -64,7 +64,7 @@ struct AddAcompanhantes: View {
                             .padding(12)
                             .background(.inputButton)
                             .cornerRadius(8)
-                            .font(.custom("helvetica", size: 16))
+                            .font(.custom("helvetica", size: 12))
                         
                     }
                     Spacer()
@@ -79,7 +79,7 @@ struct AddAcompanhantes: View {
                             .padding(12)
                             .background(.inputButton)
                             .cornerRadius(8)
-                            .font(.custom("helvetica", size: 16))
+                            .font(.custom("helvetica", size: 12))
                         
                     }
                     Spacer()
@@ -94,7 +94,7 @@ struct AddAcompanhantes: View {
                             .padding(12)
                             .background(.inputButton)
                             .cornerRadius(8)
-                            .font(.custom("helvetica", size: 16))
+                            .font(.custom("helvetica", size: 12))
                         
                     }
                     
