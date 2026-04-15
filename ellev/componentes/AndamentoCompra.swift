@@ -55,7 +55,7 @@ var tela:  Int
                                         
                                         Rectangle()
                                             .frame(height: 1)
-                                            .foregroundColor(.fundodeTelas)
+                                            .foregroundColor(.inputButton)
                                         
                                     }
                                     
@@ -82,7 +82,7 @@ var tela:  Int
                                 
                                 Rectangle()
                                     .frame(height: 1)
-                                    .foregroundColor(.fundodeTelas)
+                                    .foregroundColor(.inputButton)
                             }else{
                                 Spacer(minLength: 20)
                             }
@@ -130,5 +130,5 @@ var tela:  Int
 }
 
 #Preview {
-    AndamentoCompra(QuantidadeTelas: 3, tela: 3)
+    AndamentoCompra(QuantidadeTelas: 3, tela: 2)
 }
