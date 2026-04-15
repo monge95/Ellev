@@ -4,6 +4,8 @@ struct InputDateTimeView: View {
     
     var inputType: String
     
+    @Binding var selectedDate: Date
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(inputType == "date" ? "Data de partida" : "Hora de chegada")
@@ -15,7 +17,7 @@ struct InputDateTimeView: View {
                     .fill(Color.inputButton)
                     .frame(height: 44)
                 
-                CustomDateTimePicker(inputType: inputType)
+                CustomDateTimePicker(inputType: inputType, selectedDate: $selectedDate)
             }
             .clipped()
             .contentShape(Rectangle())
@@ -23,6 +25,6 @@ struct InputDateTimeView: View {
     }
 }
 
-#Preview {
-    InputDateTimeView(inputType: "date")
-}
+//#Preview {
+//    InputDateTimeView(inputType: "date")
+//}

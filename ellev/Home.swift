@@ -45,8 +45,8 @@ struct Home: View {
                             .foregroundStyle(.button)
                         
                         HStack{
-                            InputDateTimeView(inputType: "date")
-                            InputDateTimeView(inputType: "time")
+                            InputDateTimeView(inputType: "date", selectedDate: $bindViewModel.departureDate)
+                            InputDateTimeView(inputType: "time", selectedDate: $bindViewModel.departureTime)
                         }
                         
                         Toggle("Irá acompanhado de outro passageiro?", isOn: $bindViewModel.vaiAcompanhado)
@@ -127,7 +127,7 @@ struct Home: View {
 
 #Preview {
     
-    var viewModel = SchedulingViewModel()
+    let viewModel = SchedulingViewModel()
     
     Home()
         .environment(viewModel)

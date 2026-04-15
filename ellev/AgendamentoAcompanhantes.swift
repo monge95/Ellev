@@ -119,7 +119,7 @@ struct AgendamentoAcompanhantes: View {
 }
 
 #Preview {
-    var viewModel = SchedulingViewModel()
+    let viewModel = SchedulingViewModel()
     
     AgendamentoAcompanhantes()
         .environment(viewModel)
