@@ -98,23 +98,31 @@ struct Home: View {
                                 AgendarPilotos(QuantidadeTelas: 2)
                             }
                         }label: {
-                            Text("Viaje com a gente")
-                                .font(Font.custom("helveticaNeue-regular", size: 20))
-                                .frame(maxWidth: .infinity, minHeight: 44)
-                                .background(Color("ButtonColor"))
-                                .foregroundColor(Color("FundodeTelasColor"))
-                                .cornerRadius(50)
+                            ZStack {
+                                Text("Iniciar agendamento")
+                                    .font(Font.custom("helveticaNeue-regular", size: 20))
+                                    .foregroundColor(Color("FundodeTelasColor"))
+                                    .frame(maxWidth: .infinity, minHeight: 44)
+
+                                HStack {
+                                    Image("beijaflorBranco")
+                                        .padding(.leading, 30)
+                                    Spacer()
+                                }
+                            }
+                            .background(Color("ButtonColor"))
+                            .cornerRadius(50)
                         }
                         .padding(.top, 20)
                         
                         Spacer(minLength: 40)
                     }
+                    .environment(viewModel)
                     
                 }
                 .padding(.horizontal, 54)
                 .scrollIndicators(.hidden)
             }
-            .environment(viewModel)
             
             Spacer()
             ContentView(selectedView: "home")

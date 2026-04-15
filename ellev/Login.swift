@@ -73,7 +73,7 @@ struct Login: View {
                         Home()
                     } label:{
                         Text("Entrar")
-                            .font(Font.custom("helveticaNeue-regular", size: 24))
+                            .font(Font.custom("helveticaNeue-regular", size: 20))
                             .frame(maxWidth: .infinity, minHeight: 44)
                             .background(Color("ButtonColor"))
                             .foregroundColor(Color("FundodeTelasColor"))
@@ -110,7 +110,7 @@ struct Login: View {
                                 .foregroundColor(Color(.tex))
                             
                             Text("Continue com o Apple")
-                                .font(Font.custom("helveticaNeue-regular", size: 24))
+                                .font(Font.custom("helveticaNeue-regular", size: 20))
                                 .frame(maxWidth: .infinity, minHeight: 44)
                                 .background(Color("FundodeTelasColor"))
                                 .foregroundColor(Color(.tex))

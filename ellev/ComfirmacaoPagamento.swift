@@ -23,22 +23,14 @@ struct ComfirmacaoPagamento: View {
             
                     Spacer()
         NavigationLink{
-                
+                RegrasEmbarque()
         }label: {
-            ZStack {
-                Text("Regras de Embarque")
-                    .font(Font.custom("jost-regular", size: 20))
-                    .foregroundColor(Color("FundodeTelasColor"))
-                    .frame(maxWidth: .infinity, minHeight: 44)
-
-                HStack {
-                    Image("beijaflorBranco")
-                        .padding(.leading, 20)
-                    Spacer()
-                }
-            }
-            .background(Color("ButtonColor"))
-            .cornerRadius(50)
+            Text("Regras de Embarque")
+                .font(Font.custom("helveticaNeue-regular", size: 20))
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .background(Color("ButtonColor"))
+                .foregroundColor(Color("FundodeTelasColor"))
+                .cornerRadius(50)
         }
                 }.padding(.horizontal,54)
             }
