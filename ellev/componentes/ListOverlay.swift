@@ -51,38 +51,50 @@ struct ListOverlay: View {
                                 .frame(height: 5)
                         }
                     } else if infoList == "passenger" {
-                        ForEach(viewModel.filteredAcompanhantes) { acompanhante in
+                        if viewModel.acompanhantes.isEmpty {
                             
-                            let isSelected = viewModel.acompanhantesSelecionados.contains(where: { $0.id == acompanhante.id })
+                            Spacer(minLength: 30)
                             
-                            VStack(alignment: .leading, spacing: 8) {
-                                HStack {
-                                    Text(acompanhante.nome)
-                                        .font(.custom("Helvetica-Bold", size: 16))
-                                        .foregroundStyle(.fundodeTelas)
-                                    
-                                    Spacer()
-                                    
-                                    Button(action: {
-                                        if isSelected {
-                                            viewModel.acompanhantesSelecionados.removeAll(where: { $0.id == acompanhante.id })
-                                        } else {
-                                            viewModel.acompanhantesSelecionados.append(acompanhante)
-                                        }
-                                    }) {
-                                        Image(systemName: isSelected ? "checkmark.square.fill" : "plus.app.fill")
-                                            .font(.system(size: 15))
+                            Text("Nenhum passageiro cadastrado!")
+                                .font(.custom("Helvetica-Bold", size: 15))
+                                .foregroundStyle(.fundodeTelas)
+                            
+                            Spacer(minLength: 30)
+                            
+                        } else {
+                            ForEach(viewModel.filteredAcompanhantes) { acompanhante in
+                                
+                                let isSelected = viewModel.acompanhantesSelecionados.contains(where: { $0.id == acompanhante.id })
+                                
+                                VStack(alignment: .leading, spacing: 8) {
+                                    HStack {
+                                        Text(acompanhante.nome)
+                                            .font(.custom("Helvetica-Bold", size: 16))
                                             .foregroundStyle(.fundodeTelas)
+                                        
+                                        Spacer()
+                                        
+                                        Button(action: {
+                                            if isSelected {
+                                                viewModel.acompanhantesSelecionados.removeAll(where: { $0.id == acompanhante.id })
+                                            } else {
+                                                viewModel.acompanhantesSelecionados.append(acompanhante)
+                                            }
+                                        }) {
+                                            Image(systemName: isSelected ? "checkmark.square.fill" : "plus.app.fill")
+                                                .font(.system(size: 15))
+                                                .foregroundStyle(.fundodeTelas)
+                                        }
                                     }
                                 }
-                            }
-                            .padding(.vertical, 12)
-                            .padding(.horizontal, 16)
-                            
-                            Divider()
-                                .background(.inputButton)
+                                .padding(.vertical, 12)
                                 .padding(.horizontal, 16)
-                                .frame(height: 5)
+                                
+                                Divider()
+                                    .background(.inputButton)
+                                    .padding(.horizontal, 16)
+                                    .frame(height: 5)
+                            }
                         }
                     }
                     
