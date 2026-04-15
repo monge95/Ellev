@@ -47,4 +47,14 @@ class SchedulingViewModel {
             return acompanhantes.filter { $0.nome.localizedCaseInsensitiveContains(searchText)}
         }
     }
+    
+    var dataPartidaFormatada: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter.string(from: departureDate)
+    }
+    
+    var horaChegadaFormatada: String {
+        return departureTime.formatted(date: .omitted, time: .shortened)
+    }
 }

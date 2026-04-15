@@ -109,11 +109,10 @@ struct AgendarPilotos: View {
                 }
                 .padding(.horizontal, 54)
                 .padding(.vertical, 50)
-                .environment(viewModel)
                 
             }
         }
-        
+        .environment(viewModel)
         
     }
     

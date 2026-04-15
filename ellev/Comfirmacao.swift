@@ -40,10 +40,10 @@ struct Comfirmacao: View {
                     //
                     //                    resumo do pagamento
                     VStack(alignment: .leading, spacing: 5){
-                        Text("Data de partida:" + "\(viewModel.departureDate)")
+                        Text("Data de partida: " + "\(viewModel.dataPartidaFormatada)")
                             .font(.custom("jost-bold", size: 15))
                         
-                        Text("Horário de partida: " + "\(viewModel.departureTime)")
+                        Text("Horário de partida: " + "\(viewModel.horaChegadaFormatada)")
                             .font(.custom("jost-bold", size: 15))
                         
                         
@@ -90,12 +90,22 @@ struct Comfirmacao: View {
                         
                         if viewModel.vaiAcompanhado {
                             
-                            HStack{
+                            VStack{
                                 Text("Acompanhantes:")
                                     .font(.custom("jost-bold", size: 15))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                                 
-                                Text("bla bla")
-                                    .font(.custom("helvetica-regular", size: 12))
+                                ScrollView(.horizontal, showsIndicators: false){
+                                    HStack(spacing: 10) {
+                                        ForEach(viewModel.acompanhantesSelecionados) { acompanhante in
+                                            Text("\(acompanhante.nome)")
+                                                .font(.custom("helvetica-regular", size: 12))
+                                                .padding(4)
+                                                .background(.button)
+                                                .cornerRadius(5)
+                                        }
+                                    }
+                                }
                             }
                         }
                         
@@ -217,6 +227,7 @@ struct Comfirmacao: View {
                 .padding(.horizontal, 54)
             }
         }
+        .environment(viewModel)
     }
 }
 

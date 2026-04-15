@@ -117,8 +117,6 @@ struct Home: View {
                         
                         Spacer(minLength: 40)
                     }
-                    .environment(viewModel)
-                    
                 }
                 .padding(.horizontal, 54)
                 .scrollIndicators(.hidden)
@@ -130,6 +128,7 @@ struct Home: View {
             
         }
         .navigationBarBackButtonHidden(true)
+        .environment(viewModel)
     }
 }
 
