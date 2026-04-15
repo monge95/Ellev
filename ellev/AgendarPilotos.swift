@@ -13,7 +13,7 @@ struct AgendarPilotos: View {
     
     @State private var showPilots = false
     
-    @State private var viewModel = SchedulingViewModel()
+    @Environment(SchedulingViewModel.self) var viewModel
     
     var body: some View {
         NavigationStack {
@@ -60,7 +60,8 @@ struct AgendarPilotos: View {
                         .overlay(alignment: .top) {
                             if showPilots {
                                 ScrollView {
-                                    ListOverlay(viewModel: viewModel, show: $showPilots, infoList: "pilot")
+                                    ListOverlay(show: $showPilots, infoList: "pilot")
+                                        .environment(viewModel)
                                 }
                                 .frame(height: 400)
                                 .offset(y: 39)
@@ -120,5 +121,8 @@ struct AgendarPilotos: View {
 
 
 #Preview {
+    var viewModel = SchedulingViewModel()
+    
     AgendarPilotos(QuantidadeTelas: 3)
+        .environment(viewModel)
 }

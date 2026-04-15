@@ -14,6 +14,12 @@ class SchedulingViewModel {
     var pilotSelected: Pilot = Pilot(name: "Calvin B.", flyHours: 200, helicopterModel: "Airbus H145", specialtyPilot: "Voos noturnos e agilidade urbana.", pilotImageName: "fotoCalvin")
     var acompanhantesSelecionados: [Acompanhantes] = []
     
+    var vaiAcompanhado: Bool = false
+    var departureLocation: String = ""
+    var arrivalLocation: String = ""
+    var departureDate: Date = Date()
+    var departureTime: Date = Date()
+    
     var pilots: [Pilot] = [
         Pilot(name: "Calvin B.", flyHours: 200, helicopterModel: "Airbus H145", specialtyPilot: "Voos noturnos e agilidade urbana.", pilotImageName: "fotoCalvin"),
         Pilot(name: "Alex C.", flyHours: 110, helicopterModel: "Airbus ACH145", specialtyPilot: "Voos longos e noturnos.", pilotImageName: "fotoAlex"),

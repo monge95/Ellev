@@ -14,6 +14,8 @@ struct Comfirmacao: View {
     var pix: Bool = false
     var cartao: Bool = false
     
+    @Environment(SchedulingViewModel.self) var viewModel
+    
     var body: some View {
         
         NavigationStack{
@@ -140,5 +142,8 @@ struct Comfirmacao: View {
 }
 
 #Preview {
+    var viewModel = SchedulingViewModel()
+    
     Comfirmacao(QuantidadeTelas: 3, tela: 2)
+        .environment(viewModel)
 }

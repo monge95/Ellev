@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListOverlay: View {
     
-    var viewModel: SchedulingViewModel
+    @Environment(SchedulingViewModel.self) var viewModel
     @Binding var show: Bool
     let infoList: String
     

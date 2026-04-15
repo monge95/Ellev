@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct Home: View {
-    @State public var acompanhatesToggle: Bool = false
-    @State private var departureInput: String = ""
-    @State private var arrivalInput: String = ""
+    @State private var viewModel = SchedulingViewModel()
     
     var body: some View {
+        
+        @Bindable var bindViewModel = viewModel
+        
         NavigationStack {
             ZStack{
                 Color("FundodeTelasColor")
@@ -48,7 +49,7 @@ struct Home: View {
                             InputDateTimeView(inputType: "time")
                         }
                         
-                        Toggle("Irá acompanhado de outro passageiro?", isOn: $acompanhatesToggle)
+                        Toggle("Irá acompanhado de outro passageiro?", isOn: $bindViewModel.vaiAcompanhado)
                             .scaleEffect(0.97)
                             .font(Font.custom("Helvetica", size: 14))
                             .tint(.button)
@@ -67,7 +68,7 @@ struct Home: View {
                                 .font(.custom("Helvetica", size: 14))
                                 .foregroundStyle(.tex)
                             
-                            TextField("Buscar local de partida...", text: $departureInput)
+                            TextField("Buscar local de partida...", text: $bindViewModel.departureLocation)
                                 .font(.custom("Helvetica", size: 14))
                                 .padding(.vertical, 10)
                                 .padding(.horizontal, 15)
@@ -80,7 +81,7 @@ struct Home: View {
                                 .font(.custom("Helvetica", size: 14))
                                 .foregroundStyle(.tex)
                             
-                            TextField("Buscar local de partida...", text: $arrivalInput)
+                            TextField("Buscar local de partida...", text: $bindViewModel.arrivalLocation)
                                 .font(.custom("Helvetica", size: 14))
                                 .padding(.vertical, 10)
                                 .padding(.horizontal, 15)
@@ -91,7 +92,7 @@ struct Home: View {
                         CustomMap()
                         
                         NavigationLink {
-                            if acompanhatesToggle {
+                            if viewModel.vaiAcompanhado {
                                 AgendarPilotos(QuantidadeTelas: 3)
                             } else {
                                 AgendarPilotos(QuantidadeTelas: 2)
@@ -113,6 +114,7 @@ struct Home: View {
                 .padding(.horizontal, 54)
                 .scrollIndicators(.hidden)
             }
+            .environment(viewModel)
             
             Spacer()
             ContentView(selectedView: "home")
@@ -124,6 +126,10 @@ struct Home: View {
 }
 
 #Preview {
+    
+    var viewModel = SchedulingViewModel()
+    
     Home()
+        .environment(viewModel)
 }
 
