@@ -25,7 +25,7 @@ struct ContentView: View {
                         
                         Spacer()
                         NavigationLink{
-                            Login()
+                            telaEmmanutencao()
                         }label: {
                             Image(systemName: "calendar")
                                 .resizable()
@@ -37,7 +37,7 @@ struct ContentView: View {
                         
                         Spacer()
                         NavigationLink{
-                            Login()
+                            telaEmmanutencao()
                         }label: {
                             Image(systemName: "person.crop.circle")
                                 .resizable()
@@ -78,7 +78,7 @@ struct ContentView: View {
                         
                         Spacer()
                         NavigationLink{
-                            Login()
+                            telaEmmanutencao()
                         }label: {
                             Image(systemName: "person.crop.circle")
                                 .resizable()
@@ -105,7 +105,7 @@ struct ContentView: View {
                         
                         Spacer()
                         NavigationLink{
-                            Login()
+                            telaEmmanutencao()
                         }label: {
                             Image(systemName: "calendar")
                                 .resizable()
