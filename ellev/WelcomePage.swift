@@ -48,12 +48,20 @@ struct WelcomePage: View {
                     NavigationLink{
                         Login()
                     }label: {
-                        Text("Viaje com a gente")
-                            .font(Font.custom("helveticaNeue-regular", size: 20))
-                            .frame(maxWidth: .infinity, minHeight: 44)
-                            .background(Color("ButtonColor"))
-                            .foregroundColor(Color("FundodeTelasColor"))
-                            .cornerRadius(50)
+                        ZStack {
+                            Text("Viaje com a gente")
+                                .font(Font.custom("helveticaNeue-regular", size: 20))
+                                .foregroundColor(Color("FundodeTelasColor"))
+                                .frame(maxWidth: .infinity, minHeight: 44)
+
+                            HStack {
+                                Image("beijaflorBranco")
+                                    .padding(.leading, 30)
+                                Spacer()
+                            }
+                        }
+                        .background(Color("ButtonColor"))
+                        .cornerRadius(50)
                     }
                     .padding(.top, 270)
                     .padding(.horizontal, 54)
