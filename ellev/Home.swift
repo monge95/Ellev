@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Home: View {
-    @State private var viewModel = SchedulingViewModel()
+    @Environment(SchedulingViewModel.self) var viewModel
     
     var body: some View {
         

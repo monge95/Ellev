@@ -28,9 +28,7 @@ class SchedulingViewModel {
     ]
     
     
-    var acompanhantes: [Acompanhantes] = [
-        Acompanhantes(nome: "Keyla Abelaver", cpf: "374.985.234-09", idade: 40, peso: 65.6)
-    ]
+    var acompanhantes: [Acompanhantes] = []
     
     var filteredPilots: [Pilot] {
         if searchText.isEmpty {
