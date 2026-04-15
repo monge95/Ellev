@@ -135,7 +135,7 @@ struct AddAcompanhantes: View {
 }
 
 #Preview {
-    var viewModel = SchedulingViewModel()
+    let viewModel = SchedulingViewModel()
     
     AddAcompanhantes()
         .environment(viewModel)

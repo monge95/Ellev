@@ -142,7 +142,7 @@ struct Comfirmacao: View {
 }
 
 #Preview {
-    var viewModel = SchedulingViewModel()
+    let viewModel = SchedulingViewModel()
     
     Comfirmacao(QuantidadeTelas: 3, tela: 2)
         .environment(viewModel)

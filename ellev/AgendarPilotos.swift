@@ -121,7 +121,7 @@ struct AgendarPilotos: View {
 
 
 #Preview {
-    var viewModel = SchedulingViewModel()
+    let viewModel = SchedulingViewModel()
     
     AgendarPilotos(QuantidadeTelas: 3)
         .environment(viewModel)

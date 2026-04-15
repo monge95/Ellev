@@ -4,11 +4,9 @@ struct CustomDateTimePicker: View {
     
     var inputType: String
     
-    @State private var selectedDate = Date()
-    @State private var selectedHour = Int()
-    @State private var selectedMinute = Int()
+    @Binding var selectedDate: Date
+    
     @State private var inputIsSelected = false
-    @State private var selectedHourAndMinute = ""
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -25,7 +23,7 @@ struct CustomDateTimePicker: View {
                         .foregroundStyle(.tex)
                         .font(.custom("Helvetica-Regular", size: 12))
                 } else {
-                    Text(selectedHourAndMinute)
+                    Text(selectedDate.formatted(date: .omitted, time: .shortened))
                         .foregroundStyle(.tex)
                         .font(.custom("Helvetica-Regular", size: 12))
                 }
@@ -49,17 +47,9 @@ struct CustomDateTimePicker: View {
             selection: Binding(
                 get: {selectedDate},
                 set: {
-                    newValue in selectedDate = newValue
+                    newValue in
+                    selectedDate = newValue
                     inputIsSelected = true
-                    
-                    let calendar = Calendar.current
-                    selectedHour = calendar.component(.hour, from: newValue)
-                    selectedMinute = calendar.component(.minute, from: newValue)
-                    
-                    let hourString = String(format: "%02d", selectedHour)
-                    let minuteString = String(format: "%02d", selectedMinute)
-                    
-                    selectedHourAndMinute = "\(hourString):\(minuteString)"
                 }
             ),
             displayedComponents: inputType == "date" ? .date : .hourAndMinute
@@ -71,6 +61,6 @@ struct CustomDateTimePicker: View {
     }
 }
 
-#Preview {
-    CustomDateTimePicker(inputType: "time")
-}
+//#Preview {
+//    CustomDateTimePicker(inputType: "time")
+//}
